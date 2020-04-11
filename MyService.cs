@@ -30,7 +30,7 @@ namespace GetTheWeather
             string outputtext = $"Temp: {myWeather.Temp.ToString()}, Precipitation:{myWeather.Precipmode.ToString()}";
 
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            FileStream fs = new FileStream(Path.Combine(docPath, "myWeather.txt"), FileMode.Append);
+            FileStream fs = new FileStream(Path.Combine(docPath, "myWeather.csv"), FileMode.Append);
 
             using (StreamWriter outputFile = new StreamWriter(fs))
             {

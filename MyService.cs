@@ -17,7 +17,7 @@ namespace GetTheWeather
             fivemintimeer = new System.Timers.Timer(300000);
             fivemintimeer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
 
-            fivemintimeer.Interval = 5000;
+            fivemintimeer.Interval = 300000;
             fivemintimeer.Enabled = true;
 
         }
@@ -26,7 +26,6 @@ namespace GetTheWeather
 
             WeatherData myWeather = new WeatherData("Dallas");
             myWeather.CheckWeather();
-            //System.Console.WriteLine(WarsawWeather.Temp);
 
             string outputtext = $"Temp: {myWeather.Temp.ToString()}, Precipitation:{myWeather.Precipmode.ToString()}";
 
@@ -36,7 +35,7 @@ namespace GetTheWeather
             using (StreamWriter outputFile = new StreamWriter(fs))
             {
                 outputFile.WriteLine(outputtext);
-                Console.WriteLine(outputtext);
+                //Console.WriteLine(outputtext);
                 outputFile.Close();
             }
             
